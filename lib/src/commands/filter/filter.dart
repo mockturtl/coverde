@@ -146,14 +146,9 @@ The coverage data is taken from the $_inputHelpValue file and the result is appe
       }
     }
 
-    // Use absolute path.
     final finalContent = acceptedSrcFilesCovData
         .map((srcFileCovData) => srcFileCovData.raw)
-        .join('\n')
-        .replaceAll(
-          RegExp(CovFile.sourceFileTag),
-          '${CovFile.sourceFileTag}${pwd.path}${path.separator}',
-        );
+        .join('\n');
 
     // Generate destination file and its content.
     destination
